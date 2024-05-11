@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Scroller</title>
+  <style>
+    /* Basic styling */
+    .container {
+      display: flex;
+      align-items: center;
+    }
+    .thumbnail {
+      width: 50px; /* Adjust thumbnail width as needed */
+      height:50px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .thumbnail:hover {
+      opacity: 0.7; /* Dim the thumbnail on hover */
+    }
+    .selected {
+      border: 10px solid blue; /* Border for selected thumbnail */
+    }
+    .large-image {
+      width: 300px; /* Adjust large image width as needed */
+      height: 300px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div id="thumbnails">
+    <!-- Thumbnail images -->
+    <img class="thumbnail" src="cute.jpg" onclick="displayImage('cute.jpg')" />
+    <img class="thumbnail" src="martini.jpg" onclick="displayImage('martini.jpg')" />
+    <img class="thumbnail" src="icey.jpg" onclick="displayImage('icey.jpg')" />
+    <!-- Add more thumbnails as needed -->
+  </div>
+  <div>
+    <!-- Large image display -->
+    <img id="largeImage" class="large-image" src="" alt="Large Image" />
+  </div>
+</div>
+
+<script>
+  function displayImage(imageUrl) {
+    var largeImage = document.getElementById("largeImage");
+    largeImage.src = imageUrl;
+  }
+</script>
+</body>
+</html>
